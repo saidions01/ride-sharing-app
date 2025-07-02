@@ -9,13 +9,13 @@
         <pages>
             <Page title="Ride Sharing App">
                 <content>
-                    <VBox class="rideAppVBox">
-                        <SearchField
-                            placeholder="Search by Driver or Pickup Location"
-                            liveChange="onSearch"
-                            width="100%"
-                        />
+                    <SearchField
+                        placeholder="Search by Driver or Pickup Location"
+                        liveChange="onSearch"
+                        width="100%"
+                    />
 
+                    <VBox visible="{/showSearchResults}">
                         <List
                             id="rideList"
                             items="{/rides}"
@@ -24,16 +24,18 @@
                             <StandardListItem
                                 title="{driverName}"
                                 description="{pickupLocation} → {destination}"
-                               icon="sap-icon://fleet-vehicle"
-
+                                icon="sap-icon://car"
                             />
                         </List>
                     </VBox>
-                    <Panel class="rideFormPanel"
+
+                    <Panel
+                        class="rideFormPanel"
                         headerText="Add New Ride"
                         width="auto"
                     >
-                        <l:Grid  class="rideFormGrid"
+                        <l:Grid
+                            class="rideFormGrid"
                             defaultSpan="L12 M12 S12"
                             width="auto"
                         >
@@ -104,7 +106,7 @@
                         </l:Grid>
                     </Panel>
                     <Table
-                       id="rideTable"
+                        id="rideTable"
                         inset="false"
                         items="{/rides}"
                     >
