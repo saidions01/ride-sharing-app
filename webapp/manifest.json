@@ -30,7 +30,8 @@
 		"rootView": {
 			"viewName": "com.ridesharing.view.App",
 			"type": "XML",
-			"id": "app"
+			"id": "app",
+      "async": true
 		},
 
 		"dependencies": {
