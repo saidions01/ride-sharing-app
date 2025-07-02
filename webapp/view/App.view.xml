@@ -1,76 +1,157 @@
 <mvc:View
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  xmlns:l="sap.ui.layout"
-  controllerName="com.ridesharing.controller.App"
-  displayBlock="true">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    controllerName="com.ridesharing.controller.App"
+    displayBlock="true"
+>
+    <App>
+        <pages>
+            <Page title="Ride Sharing App">
+                <content>
+                    <VBox class="rideAppVBox">
+                        <SearchField
+                            placeholder="Search by Driver or Pickup Location"
+                            liveChange="onSearch"
+                            width="100%"
+                        />
 
-  <App>
-    <pages>
-      <Page title="Ride Sharing App">
-        <content>
+                        <List
+                            id="rideList"
+                            items="{/rides}"
+                            itemPress="onRidePress"
+                        >
+                            <StandardListItem
+                                title="{driverName}"
+                                description="{pickupLocation} → {destination}"
+                               icon="sap-icon://fleet-vehicle"
 
-		    <Panel headerText="Add New Ride" width="auto">
-            <l:Grid defaultSpan="L12 M12 S12" width="auto">
-              <l:content>
-                <Label text="Ride ID" labelFor="rideIdInput"/>
-                <Input id="rideIdInput" type="Number" value="{/newRide/rideId}"/>
-                
-                <Label text="Driver Name" labelFor="driverNameInput"/>
-                <Input id="driverNameInput" value="{/newRide/driverName}"/>
-                
-                <Label text="Vehicle" labelFor="vehicleInput"/>
-                <Input id="vehicleInput" value="{/newRide/vehicle}"/>
-                
-                <Label text="Available Seats" labelFor="seatsInput"/>
-                <Input id="seatsInput" type="Number" value="{/newRide/availableSeats}"/>
-                
-                <Label text="Pickup Location" labelFor="pickupInput"/>
-                <Input id="pickupInput" value="{/newRide/pickupLocation}"/>
-                
-                <Label text="Destination" labelFor="destinationInput"/>
-                <Input id="destinationInput" value="{/newRide/destination}"/>
-                
-                <Button 
-                  text="Add Ride" 
-                  press="onAddRide"
-                  type="Accept"
-                  width="120px"/>
-              </l:content>
-            </l:Grid>
-          </Panel>
-            <Table id="rideTable" inset="false" items="{/rides}">
-            <columns>
-              <Column><Text text="Ride ID"/></Column>
-              <Column><Text text="Driver Name"/></Column>
-              <Column><Text text="Vehicle"/></Column>
-              <Column><Text text="Available Seats"/></Column>
-              <Column><Text text="Pickup Location"/></Column>
-              <Column><Text text="Destination"/></Column>
-              <Column width="120px"><Text text="Actions"/></Column>
-            </columns>
-            <items>
-              <ColumnListItem>
-                <cells>
-                  <Text text="{rideId}"/>
-                  <Text text="{driverName}"/>
-                  <Text text="{vehicle}"/>
-                  <Text text="{availableSeats}"/>
-                  <Text text="{pickupLocation}"/>
-                  <Text text="{destination}"/>
-                  <Button 
-                    icon="sap-icon://delete" 
-                    press="onDeleteRide"
-                    type="Reject"
-                    tooltip="Delete Ride"/>
-                </cells>
-              </ColumnListItem>
-            </items>
-          </Table>
+                            />
+                        </List>
+                    </VBox>
+                    <Panel class="rideFormPanel"
+                        headerText="Add New Ride"
+                        width="auto"
+                    >
+                        <l:Grid  class="rideFormGrid"
+                            defaultSpan="L12 M12 S12"
+                            width="auto"
+                        >
+                            <l:content>
+                                <Label
+                                    text="Ride ID"
+                                    labelFor="rideIdInput"
+                                />
+                                <Input
+                                    id="rideIdInput"
+                                    type="Number"
+                                    value="{/newRide/rideId}"
+                                />
 
-        </content>
-      </Page>
-    </pages>
-  </App>
+                                <Label
+                                    text="Driver Name"
+                                    labelFor="driverNameInput"
+                                />
+                                <Input
+                                    id="driverNameInput"
+                                    value="{/newRide/driverName}"
+                                />
 
+                                <Label
+                                    text="Vehicle"
+                                    labelFor="vehicleInput"
+                                />
+                                <Input
+                                    id="vehicleInput"
+                                    value="{/newRide/vehicle}"
+                                />
+
+                                <Label
+                                    text="Available Seats"
+                                    labelFor="seatsInput"
+                                />
+                                <Input
+                                    id="seatsInput"
+                                    type="Number"
+                                    value="{/newRide/availableSeats}"
+                                />
+
+                                <Label
+                                    text="Pickup Location"
+                                    labelFor="pickupInput"
+                                />
+                                <Input
+                                    id="pickupInput"
+                                    value="{/newRide/pickupLocation}"
+                                />
+
+                                <Label
+                                    text="Destination"
+                                    labelFor="destinationInput"
+                                />
+                                <Input
+                                    id="destinationInput"
+                                    value="{/newRide/destination}"
+                                />
+
+                                <Button
+                                    text="Add Ride"
+                                    press="onAddRide"
+                                    type="Accept"
+                                    width="120px"
+                                />
+                            </l:content>
+                        </l:Grid>
+                    </Panel>
+                    <Table
+                       id="rideTable"
+                        inset="false"
+                        items="{/rides}"
+                    >
+                        <columns>
+                            <Column>
+                                <Text text="Ride ID" />
+                            </Column>
+                            <Column>
+                                <Text text="Driver Name" />
+                            </Column>
+                            <Column>
+                                <Text text="Vehicle" />
+                            </Column>
+                            <Column>
+                                <Text text="Available Seats" />
+                            </Column>
+                            <Column>
+                                <Text text="Pickup Location" />
+                            </Column>
+                            <Column>
+                                <Text text="Destination" />
+                            </Column>
+                            <Column width="120px">
+                                <Text text="Actions" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{rideId}" />
+                                    <Text text="{driverName}" />
+                                    <Text text="{vehicle}" />
+                                    <Text text="{availableSeats}" />
+                                    <Text text="{pickupLocation}" />
+                                    <Text text="{destination}" />
+                                    <Button
+                                        icon="sap-icon://delete"
+                                        press="onDeleteRide"
+                                        type="Reject"
+                                        tooltip="Delete Ride"
+                                    />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Page>
+        </pages>
+    </App>
 </mvc:View>

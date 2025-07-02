@@ -7,6 +7,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device", "./model/models"], fu
 			interfaces: ["sap.ui.core.IAsyncContentCreation"]
 		},
 		init: function () {
+
 			// call the base component's init function
 			UIComponent.prototype.init.call(this); // create the views based on the url/hash
 
@@ -15,6 +16,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/Device", "./model/models"], fu
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
+            
 		},
 		/**
 		 * This method can be called to determine whether the sapUiSizeCompact or sapUiSizeCozy

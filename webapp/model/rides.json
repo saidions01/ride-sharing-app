@@ -1,0 +1,28 @@
+{
+  "rides": [
+    {
+      "rideId": 1,
+      "driverName": "John Doe",
+      "vehicle": "Toyota Camry",
+      "availableSeats": 3,
+      "pickupLocation": "Downtown",
+      "destination": "Airport"
+    },
+    {
+      "rideId": 2,
+      "driverName": "Jane Smith",
+      "vehicle": "Honda Accord",
+      "availableSeats": 2,
+      "pickupLocation": "University",
+      "destination": "Mall"
+    }
+  ],
+  "newRide": {
+    "rideId": "",
+    "driverName": "",
+    "vehicle": "",
+    "availableSeats": "",
+    "pickupLocation": "",
+    "destination": ""
+  }
+}

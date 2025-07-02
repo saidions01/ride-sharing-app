@@ -1,0 +1,48 @@
+/* style.css */
+
+.rideAppVBox {
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.rideFormPanel {
+  margin-top: 2rem;
+}
+
+.rideFormGrid .sapMLabel {
+  margin-top: 0.5rem;
+}
+
+.rideFormGrid .sapMInput {
+  width: 100%;
+}
+
+.rideFormGrid Button {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+#rideTable {
+  margin-top: 2rem;
+  overflow-x: auto;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .rideAppVBox {
+    padding: 0.5rem;
+  }
+
+  .rideFormGrid .sapMLabel,
+  .rideFormGrid .sapMInput {
+    font-size: 0.9rem;
+  }
+
+  .rideFormGrid Button {
+    width: 100%;
+  }
+
+  .sapMTableTBody > tr > td {
+    white-space: nowrap;
+  }
+}

@@ -1,87 +1,95 @@
 {
-	"_version": "1.12.0",
+  "_version": "1.12.0",
 
-	"sap.app": {
-		"id": "com.ridesharing",
-		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
-		"applicationVersion": {
-			"version": "${version}"
-		},
-		"sourceTemplate": {
-			"id": "generator-ui5-app",
-			"version": "1.1.0"
-		}
-	},
+  "sap.app": {
+    "id": "com.ridesharing",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "${version}"
+    },
+    "sourceTemplate": {
+      "id": "generator-ui5-app",
+      "version": "1.1.0"
+    }
+  },
 
-	"sap.ui": {
-		"technology": "UI5",
-		"icons": {},
-		"deviceTypes": {
-			"desktop": true,
-			"tablet": true,
-			"phone": true
-		}
-	},
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {},
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
 
-	"sap.ui5": {
-		"rootView": {
-			"viewName": "com.ridesharing.view.App",
-			"type": "XML",
-			"id": "app",
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.ridesharing.view.App",
+      "type": "XML",
+      "id": "app",
       "async": true
-		},
+    },
 
-		"dependencies": {
-			"minUI5Version": "1.136.2",
-			"libs": {
-				"sap.ui.core": {},
-				"sap.m": {}
-			}
-		},
+    "dependencies": {
+      "minUI5Version": "1.136.2",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
 
-		"handleValidation": true,
+    "handleValidation": true,
 
-		"contentDensities": {
-			"compact": true,
-			"cozy": true
-		},
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
 
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "com.ridesharing.i18n.i18n",
-					"supportedLocales": ["en", "de"],
-					"fallbackLocale": "en",
-					"async": true
-				}
-			}
-		},
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ridesharing.i18n.i18n",
+          "supportedLocales": ["en", "de"],
+          "fallbackLocale": "en",
+          "async": true
+        }
+      }
+    },
+     "resources": {
+    "css": [
+      {
+        "uri": "css/style.css"
+      }
+    ]
+  },
 
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"viewType": "XML",
-				"viewPath": "com.ridesharing.view",
-				"controlId": "app",
-				"controlAggregation": "pages"
-			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
-				}
-			],
-			"targets": {
-				"main": {
-					"viewId": "main",
-					"viewName": "Main"
-				}
-			}
-		}
-	}
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.ridesharing.view",
+        "controlId": "app",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "main",
+          "target": "main"
+        }
+      ],
+   
+      "targets": {
+        "main": {
+          "viewId": "main",
+          "viewName": "Main"
+        }
+      }
+    }
+  }
 }
