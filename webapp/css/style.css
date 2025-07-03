@@ -15,18 +15,34 @@
 .rideFormGrid .sapMInput {
   width: 100%;
 }
-
-.rideFormGrid Button {
-  margin-top: 1rem;
-  align-self: flex-start;
+.headerLogo{
+ position: absolute;
+  left: 0;
+  margin-left: 1rem;
+  
+  height: 250px;
+  width: 358px;
 }
+
+.mainContent {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+
 
 #rideTable {
-  margin-top: 2rem;
+
   overflow-x: auto;
   width: 100%;
-}
 
+}
+.searchBarContainer {
+  margin-top: 1.5rem;
+ 
+}
 @media only screen and (max-width: 600px) {
   .rideAppVBox {
     padding: 0.5rem;
@@ -44,4 +60,8 @@
   .sapMTableTBody > tr > td {
     white-space: nowrap;
   }
+    .rideFormPanel {
+    margin: 1rem !important;
+  }
 }
+
